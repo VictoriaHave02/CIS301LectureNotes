@@ -10,10 +10,15 @@ import org.sireum.justification.natded.prop._
 
 @pure def and3(p: B, q: B, r: B): Unit = {
   Deduce(
-    (p & q & r) |- (q)
+    (p & q & r) |- (q) //Do not change this line!
+                       //Make a note about it if needing to add parenthesis.
       Proof(
         //PROOF GOES HERE
+        //p & q & r is really (p & q) & r
+        //p & q & r & s, AndE1 would give p & q & r
         1 ( p & q & r ) by Premise,
-        
+        2 ( p & q ) by AndE1(1),
+        3 ( q ) by AndE2(2)
+      )
   )
 }
