@@ -1,0 +1,190 @@
+HW 3 due tonight
+
+Exam 1 is Thursday, September 17
+    TA review session: Wed. Sep. 16, 2-4:30, DUE 1118
+
+No new homework this week
+
+/////////////////////////////////////
+
+Today:
+- implies elimination natural deduction
+- exam 1 review
+
+/////////////////////////////////////
+
+ImplyE: implies-elimination
+
+
+          P,P → Q
+ImplyE: -----------
+            Q
+
+
+
+
+Syntax for using ImplyE:
+
+a ( P       )   by Justification,
+b ( P → Q   )   by Justification,
+c ( Q       )   by ImplyE(b, a)
+
+
+
+
+Implies symbol.
+
+Typing a → in Logika for natural deduction:
+
+    __>:
+
+(two underscores, >, :)
+
+//////////////////////////
+
+Example (imply1.sc):
+
+(p ∧ q) → r,  p → q,  p  ⊢ r
+
+
+
+Example (imply2.sc):
+
+p → r,  q → r,  p ∨ q  ⊢ r
+
+
+/////////////////////////////
+
+Bigger example: prac.sc
+
+/////////////////////////////
+
+**We will save the other implies rule, implies-introduction, until
+    AFTER exam 1
+
+**Exam 1 WILL include implies-elimination
+
+/////////////////////////////
+
+/////////////////////////
+
+Logika features/tips
+
+- renumber/reformat proofs
+- interpreting errors
+
+
+/////////////////////////
+
+General proof strategy to this point
+
+1) list premises
+2) break down any premises you can to get extra information
+    AND statement - extract both sides
+    IMPLIES statement - see if you already have the left
+        side or can easily build the left side. Then use
+        ImplyE.
+
+3) look at the conclusion
+
+4) consider if you will need OrE (probably will if you have an OR)
+
+Always consider order of operations!
+
+/////////////////////////
+
+(in-class quiz)
+
+/////////////////////////
+
+Exam 1 review.
+
+Covers everything we've done up to this point 
+(including today).
+
+
+See Canvas announcement for list of topics.
+
+
+
+
+How to prove two propositional logic statements are 
+equivalent?
+
+two truth tables - show that for every possible imput, 
+    the statements have the same output
+
+deduction - statement1 |- statement2
+    AND statement2 |- statement1
+
+
+How to prove propositional logic statements are 
+NOT equivalent?
+
+    find ONE truth assignment where the outputs differ 
+
+can't prove not equivalent with deduction
+
+
+
+What is satisfiability? 
+    I can find at least one truth assignment that makes
+    a statement output true
+
+    don't need a full truth table, but could
+
+To show NOT satisfiable?
+    need to complete full truth table
+    would be contradictory
+
+
+filling out truth tables
+    mark top-level operators
+    fill in under each operator 
+    classify it at the bottom 
+        contingent - give truth assignments
+
+
+
+- Determining whether an argument is valid or invalid
+    (what is an argument?)
+
+    argument: set of premises, a conclusion
+        show: premises -> conclusion
+
+    valid: 
+
+
+    how prove valid?
+        truth table: find all truth assignments 
+            where EVERY premise is true, make sure
+            the conclusion is also true
+        Do need a full truth table!
+
+        could also use deduction:
+            premises |- conclusion
+
+
+    how prove invalid?
+        find one truth assigment where all presmises are
+        true but the conclusion is false
+
+        can't use deduction
+
+/////////////////////////////////////////
+
+Closed notes/computers.
+
+
+Mix of multiple choice (like quizzes) and open-ended 
+    (like homework)
+
+Some problems will ask for a proof or explanation --
+    read carefully!
+
+
+How to review?
+
+////////////////////////////////////////
+
+See practice exam
