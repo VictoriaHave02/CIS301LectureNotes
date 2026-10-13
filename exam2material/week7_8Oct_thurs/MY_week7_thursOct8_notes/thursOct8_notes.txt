@@ -32,11 +32,11 @@ What is the best translation to English for the following predicate logic statem
     ∀ x ∃ y (Steak(x) → Burgers(y) ∧ Partners(x, y))
 
 
-All steak restaurants are partners with a burger restaurant 
+All steak restaurants are partners with a burger restaurant (True)
 
 vs
 
-A burger restaurant is partners with all steak restaurants
+A burger restaurant is partners with all steak restaurants (False)
 
 
 Ana's: burgers, partners with Longhorn's
@@ -58,6 +58,10 @@ Today:
 
 /////////////////////////////////
 
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
+
+/////////////////////////
+
 Negation example:
 
 Domain: students
@@ -68,17 +72,22 @@ Domain: students
 
 A 5th grade prize winner isn't friends with anyone
 
-translation: 
+translation: ∃ x ∀ y (in5th(x) ∧ wonPrize(x) → ¬friends(x, y))
 
 negate:
+¬(∃ x ∀ y (in5th(x) ∧ wonPrize(x) → ¬friends(x, y)))
+∀ x ∃ y ¬((in5th(x) ⋀ wonPrize(x)) → ¬friends(x, y))
+∀ x ∃ y ¬(¬(in5th(x) ⋀ wonPrize(x)) ⋁ ¬friends(x, y))
+∀ x ∃ y (in5th(x) ⋀ wonPrize(x) ⋁ friends(x, y))
+
+translation of negation: all 5th grade prize winner have a friend
 
 
+////////////////////////////////////////
 
-translation of negation: 
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
 
-
-////////////////////////////////
-
+////////////////////////////////////////
 
 Arguments in predicate logic
 
@@ -101,7 +110,7 @@ Examples -- are the following arguments valid?
 Premises: ∀ x (P(x) → Q(x)), ∃ x P(x)
 Conclusion: ∃ x Q(x)
 
-Valid or not? 
+Valid or not? Yes! Valid in all domains.
 
 
 ///
@@ -109,9 +118,13 @@ Valid or not?
 Premises: ∀ x P(x) : everyone in my domain is P-ish
 Conclusion: ∃ x P(x): there is someone in domain who is P-ish
 
-Valid or not? 
+Valid or not? Not true if domain is empty.
 
-/////////////////////////////////
+////////////////////////////////////////
+
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
+
+////////////////////////////////////////
 
 Proofs in predicate logic.
 
@@ -125,7 +138,11 @@ Proofs in predicate logic.
 - add inference rules on quantifiers to our deduction rules
 
 
-////////////////////////////////
+////////////////////////////////////////
+
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
+
+////////////////////////////////////////
 
 Writing predicate logic statements in Logika
 
@@ -141,7 +158,7 @@ In Logika, ∃ x P(x) is written as:
 
 
 
---> what is "T"?
+--> what is "T"? An element being taken in.
 
 
 Settings->Command Palette->Tasks (run task)->Sireum slang template->
@@ -218,7 +235,7 @@ Syntax:
 
 Proof(
     1 ( ∀ ((x: T) => Human(x)) )    by Premise,
-    2 Human(Socrates)               by ???
+    2 ( Human(Socrates) )           by AllE[T](1)
 )
 
 Note: This assumes "Socrates" and "Human" were both parameters
@@ -339,7 +356,11 @@ ExistsI[T]: ---------------------
 //v is some individual of type T
 
 
-//////////////////////////////////////////
+////////////////////////////////////////
+
+∀ ∃     ∈ ∉     ∅ ⋂ ⋃ ⊂ ⊆   ⋀ ⋁ ¬ →     ℕ ℤ     ≠ ≤ ≥
+
+////////////////////////////////////////
 
 Rule syntax:
 
