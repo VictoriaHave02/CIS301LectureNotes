@@ -35,21 +35,19 @@ def mult(x: Z, y: Z): Z = {
     //need to prove precondition (requires) before recursive call
     Deduce(
       1 ( y >= 0 ) by Premise, //precondition
-      2 ( !(y == 0 ) ) by Premise, //if condition is false
+      2 ( !(y == 0) ) by Premise, //if condition is false
       3 ( y-1 >= 0 ) by Algebra*(1,2) //proves precondition
-
-      //need to prove: y-1 >= 0
     )
 
     //will tell me x*(y-1)
-    //will be x + x + ... +  (a total fo y-1 times)
+    //will be x + x + ... + x (a total of y-1 times)
     var temp: Z = mult(x, y-1)
     answer = x + temp
 
     Deduce(
       1 ( answer == x + temp ) by Premise, //from assignment
       2 ( !(y == 0) ) by Premise, //if condition is false (not needed here)
-      3 ( temp == x*(y-1) ) by Premise, //from postcondition after recursive call
+      3 ( temp == x*(y-1)  ) by Premise, //from postcondition after recursive call
 
       4 ( temp == x*y - x ) by Algebra*(3),
       5 ( answer == x + x*y - x ) by Algebra*(1,4),
@@ -79,7 +77,7 @@ val b: Z = 4
 //prove the precondition before the call
 Deduce(
   1 ( b == 4 ) by Premise, //from assignment
-  2 (b >= 0 ) by Algebra*(1) //proves precondition
+  2 ( b >= 0 ) by Algebra*(1) //proves precondition
 
   //need: b >= 0
 )
